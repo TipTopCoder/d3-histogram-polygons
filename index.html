@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Math Project</title>
+  <link rel="shortcut icon" href="https://www.fanshawec.ca/sites/default/files/favicon.ico">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+</head>
+<body>
+  <style>
+    body {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+      font-weight: 300;
+    }
+    path:hover {
+      stroke-width: 3;
+    }
+  </style>
+  
+  <div class="container-fluid" style="padding-top:15px">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3>Suicides Rates Statistic</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" style="overflow-x:hidden" id="chart-wrapper">
+        <svg id="js-chart"></svg>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered" id="count-stats">
+          <thead class="thead-light">
+            <tr>
+              <td></td>
+              <td>Mean</td>
+              <td>Median</td>
+              <td>Mode</td>
+              <td>Geometric Mean</td>
+              <td>Range</td>
+              <td>Interquartile Range</td>
+              <td>Percentile</td>
+              <td>Variance</td>
+              <td>Standard Deviation</td>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" style="overflow-x:hidden" id="count-chart-wrapper">  
+        <svg id="js-count"></svg>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" style="overflow-x:hidden" id="ccount-chart-wrapper">  
+        <svg id="js-ccount"></svg>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 15px">
+      <div class="col-6 offset-3">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-dark"><h4>Questions:</h4></li>
+          <li class="list-group-item">Why men tends to commit suicide rather than women?</li>
+          <li class="list-group-item">Why the suicide rate of Russian (RUS) men is typically high?</li>
+          <li class="list-group-item">Is the suicide rate of men in Japan (JPN) and both genders in Korea (KOR) related to "hikkomori" or "karoshi"?</li>
+          <li class="list-group-item">Do governments in some countries work effectively on making their citizen happier (downward trend)?</li>
+          <li class="list-group-item">Although there are some upward trends with narrow range and low suicide rate (below 10), it looks nothing to care, but should it be considered as an alert due to its rocketed increase?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <table class="table text-center table-bordered" id="distributed-table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" colspan="8">Frequency Table of suicide rates in <u></u></th>
+            </tr>
+            <tr>
+              <th scope="col">Bins</th>
+              <th scope="col" colspan="2">Total</th>
+              <th scope="col" colspan="2">Men</th>
+              <th scope="col" colspan="2">Women</th>
+            </tr>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Count</th>
+              <th scope="col">Cumulative Count</th>
+              <th scope="col">Count</th>
+              <th scope="col">Cumulative Count</th>
+              <th scope="col">Count</th>
+              <th scope="col">Cumulative Count</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>            
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="definitionModal" tabindex="-1" role="dialog" aria-labelledby="definitionModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="definitionModalLabel">Suicide Rates Definition</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <b>Suicide rates</b> are defined as the deaths deliberately initiated and performed by a person in the full knowledge or expectation of its fatal outcome. Comparability of data between countries is affected by a number of reporting criteria, including how a person's intention of killing themselves is ascertained, who is responsible for completing the death certificate, whether a forensic investigation is carried out, and the provisions for confidentiality of the cause of death. Caution is required therefore in interpreting variations across countries. The rates have been directly age-standardised to the 2010 OECD population to remove variations arising from differences in age structures across countries and over time. The original source of the data is the WHO Mortality Database. <u>This indicator is presented as a total and per gender and is measured in terms of deaths per 100 000 inhabitants (total), per 100 000 men and per 100 000 women.</u>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="lib/jquery-3.2.1.slim.min.js"></script>
+  <script src="lib/popper.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/d3.v4.min.js"></script>
+  <script src="lib/dat.gui.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
